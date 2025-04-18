@@ -68,6 +68,50 @@
     .close-btn:hover {
       color: #fff;
     }
+
+    footer {
+      background-color: #111;
+      color: #ccc;
+      padding: 40px;
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    .footer-links a {
+      color: #ccc;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .footer-links a:hover {
+      color: #00BFFF;
+    }
+
+    .footer-socials {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 10px;
+    }
+
+    .footer-socials a {
+      color: #00BFFF;
+      font-size: 18px;
+      text-decoration: none;
+    }
+
+    .footer-bottom {
+      font-size: 12px;
+      color: #666;
+    }
   </style>
 </head>
 <body>
@@ -114,12 +158,11 @@
   </aside>
 
   <section class="bundle-grid">
+    <!-- 6 bundles (original + new) here -->
     <div class="bundle-card">
       <h4>🎯 Rifle Meta Bundle</h4>
       <div class="price-graph">
-        <svg width="100%" height="30">
-          <polyline fill="none" stroke="#4ade80" stroke-width="3" points="0,25 20,20 40,15 60,10 80,8 100,5" />
-        </svg>
+        <svg width="100%" height="30"><polyline fill="none" stroke="#4ade80" stroke-width="3" points="0,25 20,20 40,15 60,10 80,8 100,5"/></svg>
       </div>
       <p>Includes: AK-47 | Redline, M4A1-S | Printstream, Galil AR | Chatterbox</p>
       <p>Total Price: $198.50</p>
@@ -129,9 +172,7 @@
     <div class="bundle-card">
       <h4>💼 Budget Loadout</h4>
       <div class="price-graph">
-        <svg width="100%" height="30">
-          <polyline fill="none" stroke="#4ade80" stroke-width="3" points="0,20 20,22 40,18 60,24 80,21 100,19" />
-        </svg>
+        <svg width="100%" height="30"><polyline fill="none" stroke="#4ade80" stroke-width="3" points="0,20 20,22 40,18 60,24 80,21 100,19"/></svg>
       </div>
       <p>Includes: FAMAS | Mecha Industries, Glock-18 | Candy Apple, Nova | Sand Dune</p>
       <p>Total Price: $39.99</p>
@@ -141,9 +182,7 @@
     <div class="bundle-card">
       <h4>🔥 Top 5 Cases</h4>
       <div class="price-graph">
-        <svg width="100%" height="30">
-          <polyline fill="none" stroke="#facc15" stroke-width="3" points="0,15 20,15 40,15 60,15 80,15 100,15" />
-        </svg>
+        <svg width="100%" height="30"><polyline fill="none" stroke="#facc15" stroke-width="3" points="0,15 20,15 40,15 60,15 80,15 100,15"/></svg>
       </div>
       <p>Includes: Recoil, Prisma 2, Clutch, Operation Riptide, Revolution</p>
       <p>Total Price: $11.25</p>
@@ -153,9 +192,7 @@
     <div class="bundle-card">
       <h4>🔫 Starter Loadout</h4>
       <div class="price-graph">
-        <svg width="100%" height="30">
-          <polyline fill="none" stroke="#f87171" stroke-width="3" points="0,10 20,12 40,16 60,22 80,26 100,28" />
-        </svg>
+        <svg width="100%" height="30"><polyline fill="none" stroke="#f87171" stroke-width="3" points="0,10 20,12 40,16 60,22 80,26 100,28"/></svg>
       </div>
       <p>Includes: MP9 | Starlight Protector, P250 | See Ya Later, MAC-10 | Neon Rider</p>
       <p>Total Price: $22.40</p>
@@ -165,9 +202,7 @@
     <div class="bundle-card">
       <h4>🧊 Arctic Ops</h4>
       <div class="price-graph">
-        <svg width="100%" height="30">
-          <polyline fill="none" stroke="#60a5fa" stroke-width="3" points="0,18 20,17 40,15 60,19 80,22 100,21" />
-        </svg>
+        <svg width="100%" height="30"><polyline fill="none" stroke="#60a5fa" stroke-width="3" points="0,18 20,17 40,15 60,19 80,22 100,21"/></svg>
       </div>
       <p>Includes: AWP | Neo-Noir, AUG | Arctic Wolf, G3SG1 | Polar Camo</p>
       <p>Total Price: $84.75</p>
@@ -177,9 +212,7 @@
     <div class="bundle-card">
       <h4>🟣 Purple Reign</h4>
       <div class="price-graph">
-        <svg width="100%" height="30">
-          <polyline fill="none" stroke="#c084fc" stroke-width="3" points="0,24 20,23 40,20 60,22 80,24 100,25" />
-        </svg>
+        <svg width="100%" height="30"><polyline fill="none" stroke="#c084fc" stroke-width="3" points="0,24 20,23 40,20 60,22 80,24 100,25"/></svg>
       </div>
       <p>Includes: USP-S | Purple DDPAT, Nova | Hyper Beast, Galil AR | Sugar Rush</p>
       <p>Total Price: $46.30</p>
@@ -193,27 +226,24 @@
   <div class="modal-content">
     <button class="close-btn" onclick="closeBundleInfo()">&times;</button>
     <h2>What are bundles?</h2>
-    <p>Think of bundles like ETFs for CS:GO.
-Each bundle is a curated collection of skins grouped by theme, rarity, or performance. Instead of buying the skins themselves, you're investing in shares of the total bundle value.
-
-You don’t own or use the individual items — but your shares track the performance of the bundle as a whole. Whether you’re aiming for growth, diversification, or skin market exposure, bundles give you a hands-off way to participate in the CS:GO economy.</p>
+    <p>Think of bundles like ETFs for CS:GO. Each bundle is a curated collection of skins grouped by theme, rarity, or performance. Instead of buying the skins themselves, you're investing in shares of the total bundle value.<br><br>You don’t own or use the individual items — but your shares track the performance of the bundle as a whole. Whether you’re aiming for growth, diversification, or skin market exposure, bundles give you a hands-off way to participate in the CS:GO economy.</p>
   </div>
 </div>
 
-<!-- ✅ Footer -->
-<footer class="site-footer">
-  <div class="footer-container">
-    <div class="footer-section">
-      <h4>SkinEmpire</h4>
-      <p>The modern marketplace for CS2 skin ETFs and bundles.</p>
-    </div>
-    <div class="footer-links">
-      <a href="#">FAQ</a>
-      <a href="#">Impressum</a>
-      <a href="#">Terms of Service</a>
-      <a href="#">Privacy Policy</a>
-    </div>
-    <p class="footer-bottom">© 2025 SkinEmpire. All rights reserved.</p>
+<!-- Footer -->
+<footer>
+  <div class="footer-socials">
+    <a href="https://discord.gg/" target="_blank">Discord</a>
+    <a href="https://instagram.com/" target="_blank">Instagram</a>
+  </div>
+  <div class="footer-links">
+    <a href="#">FAQ</a>
+    <a href="#">Impressum</a>
+    <a href="#">Terms</a>
+    <a href="#">Privacy</a>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2025 SkinEmpire. All rights reserved.
   </div>
 </footer>
 
@@ -221,11 +251,9 @@ You don’t own or use the individual items — but your shares track the perfor
   function openBundleInfo() {
     document.getElementById('bundleModal').style.display = 'flex';
   }
-
   function closeBundleInfo() {
     document.getElementById('bundleModal').style.display = 'none';
   }
-
   window.addEventListener('click', function(e) {
     const modal = document.getElementById('bundleModal');
     if (e.target === modal) {
