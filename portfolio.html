@@ -1,0 +1,96 @@
+<header class="navbar">
+  <div class="nav-left">
+    <h1>SkinEmpire</h1>
+    <a class="nav-link" href="index.html">Marketplace</a>
+    <a class="nav-link" href="bundles.html">Bundles</a>
+    <a class="nav-link active" href="#">Portfolio</a>
+    <a class="nav-link" href="#">Trade</a>
+  </div>
+  <div class="nav-right">
+    <button class="wallet-btn">Connect Steam account</button>
+  </div>
+</header>
+<main class="portfolio-layout">
+  <aside class="portfolio-sidebar">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+      <h4 style="margin: 0; font-size: 16px;">Your Portfolios</h4>
+      <button style="background-color: #2c2c2c; border: 1px solid #444; color: #fff; border-radius: 4px; padding: 4px 8px; cursor: pointer;">+</button>
+    </div>
+    <hr style="border-color: #333; margin: 0 0 16px;">
+    <div class="sidebar-card">
+      <h4>📁 Portfolio Alpha</h4>
+      <p>€452.30</p>
+      <p class="performance-indicator positive">+5.4%</p>
+    </div>
+    <div class="sidebar-card">
+      <h4>🎯 Clutch Builder</h4>
+      <p>€310.10</p>
+      <p class="performance-indicator negative">-3.9%</p>
+    </div>
+    <div class="sidebar-card">
+      <h4>📦 High Rollers</h4>
+      <p>€982.00</p>
+      <p class="performance-indicator positive">+11.2%</p>
+    </div>
+  </aside>
+  <section class="portfolio-main">
+    <div class="main-metric-row">
+      <div class="metric-card big">
+        <h5>Portfolio Value</h5>
+        <p class="value">€452.30</p>
+        <p class="performance-indicator positive">+€23.45 (5.4%) 24h</p>
+      </div>
+      <div class="metric-card">
+        <h5>Best Performer</h5>
+        <p>AK-47 | Redline</p>
+        <p class="performance-indicator positive">+8.20%</p>
+      </div>
+      <div class="metric-card">
+        <h5>Worst Performer</h5>
+        <p>AWP | PAW</p>
+        <p class="performance-indicator negative">-12.7%</p>
+      </div>
+    </div>
+    <div class="secondary-metrics">
+      <div class="metric-card">
+        <h5>7 Days</h5>
+        <p class="value">€18.92</p>
+        <p class="performance-indicator positive">+3.9%</p>
+      </div>
+      <div class="metric-card">
+        <h5>30 Days</h5>
+        <p class="value">€52.74</p>
+        <p class="performance-indicator positive">+6.2%</p>
+      </div>
+      <div class="metric-card">
+        <h5>All Time High</h5>
+        <p class="value">€590.00</p>
+        <p class="performance-indicator flat">📈 ATH</p>
+      </div>
+    </div>
+    <div class="portfolio-graph">
+      <h5>Portfolio Trend (6M)</h5>
+      <div class="graph-header">
+        <button class="graph-btn">1D</button>
+        <button class="graph-btn">7D</button>
+        <button class="graph-btn active">6M</button>
+        <button class="graph-btn">1Y</button>
+        <button class="graph-btn">All</button>
+      </div>
+      <svg viewBox="0 0 300 100" preserveAspectRatio="none">
+        <line x1="0" y1="20" x2="300" y2="20" stroke="#333" stroke-width="0.5" />
+        <line x1="0" y1="50" x2="300" y2="50" stroke="#333" stroke-width="0.5" />
+        <line x1="0" y1="80" x2="300" y2="80" stroke="#333" stroke-width="0.5" />
+        <polyline fill="none" stroke="#3b82f6" stroke-width="2" points="0,80 30,75 60,65 90,55 120,58 150,50 180,45 210,40 240,43 270,42 300,40" />
+      </svg>
+      <div class="graph-axis">
+        <div>Nov</div>
+        <div>Dec</div>
+        <div>Jan</div>
+        <div>Feb</div>
+        <div>Mar</div>
+        <div>Apr</div>
+      </div>
+    </div>
+  </section>
+</main>

@@ -1,0 +1,53 @@
+<header class="navbar">
+  <div class="nav-left">
+    <h1>SkinEmpire</h1>
+    <a class="nav-link" href="index.html">Marketplace</a>
+    <a class="nav-link active" href="#">Bundles</a>
+    <a class="nav-link" href="portfolio.html">Portfolio</a>
+    <a class="nav-link" href="#">Trade</a>
+  </div>
+  <div class="nav-right">
+    <button class="wallet-btn">Connect Steam account</button>
+  </div>
+</header>
+
+<main class="main">
+  <aside class="sidebar">
+    <h3 class="filter-title">Bundle Type</h3>
+    <div class="filter-group checkboxes">
+      <label><input type="checkbox" checked> Skins</label>
+      <label><input type="checkbox" checked> Cases</label>
+      <label><input type="checkbox"> Mixed Loadouts</label>
+    </div>
+
+    <h3 class="filter-title">Price Range</h3>
+    <div class="filter-group">
+      <input type="range" min="0" max="500" value="50" class="range-slider">
+      <div class="range-inputs">
+        <input type="text" placeholder="from $0.00">
+        <input type="text" placeholder="to ∞">
+      </div>
+    </div>
+
+    <h3 class="filter-title">Risk Level</h3>
+    <div class="filter-group checkboxes">
+      <label><input type="checkbox"> Safe</label>
+      <label><input type="checkbox"> Moderate</label>
+      <label><input type="checkbox"> Risky</label>
+    </div>
+  </aside>
+
+  <section class="bundle-grid">
+    <div class="bundle-card">
+      <h4>🎯 Rifle Meta Bundle</h4>
+      <div class="price-graph">
+        <svg width="100%" height="30">
+          <polyline fill="none" stroke="#4ade80" stroke-width="3" points="0,25 20,20 40,15 60,10 80,8 100,5" />
+        </svg>
+      </div>
+      <p>Includes: AK-47 | Redline, M4A1-S | Printstream, Galil AR | Chatterbox</p>
+      <p>Total Price: $198.50</p>
+      <button class="buy-btn">Buy Bundle</button>
+    </div>
+  </section>
+</main>

@@ -1,0 +1,56 @@
+<header class="navbar">
+  <div class="nav-left">
+    <h1>SkinEmpire</h1>
+    <a class="nav-link active" href="#">Marketplace</a>
+    <a class="nav-link" href="bundles.html">Bundles</a>
+    <a class="nav-link" href="portfolio.html">Portfolio</a>
+    <a class="nav-link" href="#">Trade</a>
+  </div>
+  <div class="nav-right">
+    <button class="wallet-btn">Connect Steam account</button>
+  </div>
+</header>
+
+<main class="main">
+  <aside class="sidebar">
+    <h3 class="filter-title">Filter by Price</h3>
+    <div class="filter-group">
+      <input type="range" min="0" max="500" value="50" class="range-slider">
+      <div class="range-inputs">
+        <input type="text" placeholder="from $0.00">
+        <input type="text" placeholder="to ∞">
+      </div>
+    </div>
+
+    <h3 class="filter-title">Item Type</h3>
+    <div class="filter-group checkboxes">
+      <label><input type="checkbox"> Skins</label>
+      <label><input type="checkbox"> Cases</label>
+      <label><input type="checkbox"> Stickers</label>
+    </div>
+
+    <button class="filter-button">Apply Filters</button>
+  </aside>
+
+  <section class="skin-grid">
+    <div class="skin-card">
+      <img src="https://via.placeholder.com/150x80" alt="AK-47 | Redline">
+      <div class="skin-info">
+        <h4>AK-47 | Redline</h4>
+        <p>Price: $45.00</p>
+        <p class="performance-indicator positive">+4.2%</p>
+        <button class="buy-btn">Buy Now</button>
+      </div>
+    </div>
+
+    <div class="skin-card">
+      <img src="https://via.placeholder.com/150x80" alt="AWP | Asiimov">
+      <div class="skin-info">
+        <h4>AWP | Asiimov</h4>
+        <p>Price: $110.25</p>
+        <p class="performance-indicator negative">-2.1%</p>
+        <button class="buy-btn">Buy Now</button>
+      </div>
+    </div>
+  </section>
+</main>
