@@ -1,38 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>SkinEmpire - SafeSwap</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SafeSwap | SkinEmpire</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <header class="navbar">
+    <div class="nav-left">
+      <h1>SkinEmpire</h1>
+      <a class="nav-link" href="index.html">Marketplace</a>
+      <a class="nav-link" href="bundles.html">Bundles</a>
+      <a class="nav-link" href="portfolio.html">Portfolio</a>
+      <a class="nav-link active" href="#">SafeSwap</a>
+      <a class="nav-link" href="#" style="position: relative;">
+        Trade
+        <span style="position: absolute; top: -8px; right: -18px; background-color: #facc15; color: #000; font-size: 10px; padding: 2px 4px; border-radius: 4px;">coming soon</span>
+      </a>
+    </div>
+    <div class="nav-right">
+      <button class="wallet-btn">Connect Steam account</button>
+    </div>
+  </header>
 
-<header class="navbar">
-  <div class="nav-left">
-    <h1>SkinEmpire</h1>
-    <a class="nav-link" href="index.html">Marketplace</a>
-    <a class="nav-link" href="bundles.html">Bundles</a>
-    <a class="nav-link" href="portfolio.html">Portfolio</a>
-    <a class="nav-link" href="safeswap.html">SafeSwap</a>
-    <a class="nav-link disabled" href="#" style="position: relative;">
-      Trade
-      <span style="position: absolute; top: -8px; right: -18px; background-color: #facc15; color: #000; font-size: 10px; padding: 2px 4px; border-radius: 4px;">coming soon</span>
-    </a>
-  </div>
-  <div class="nav-right">
-    <button class="wallet-btn">Connect Steam account</button>
-  </div>
-</header>
+  <main style="padding: 40px; color: #fff; max-width: 960px; margin: auto;">
+    <h2 style="font-size: 28px; margin-bottom: 12px;">🔒 SafeSwap Escrow Service</h2>
+    <p style="font-size: 15px; color: #ccc; max-width: 700px; margin-bottom: 32px;">
+      Securely trade high-value skins with another player. SkinEmpire acts as a neutral third party ensuring a fair exchange — eliminating scams and uncertainty.
+    </p>
 
-<main style="padding: 40px; color: #fff;">
-  <h2>🔒 SafeSwap Escrow Service</h2>
-  <p style="max-width: 600px; margin-top: 10px;">Use SafeSwap to securely trade high-value skins with another player. We'll act as a neutral third party to ensure both sides deliver as promised.</p>
-  <p style="margin-top: 20px; font-size: 14px;">This feature is currently in early access. Soon you'll be able to:</p>
-  <ul style="margin-top: 10px;">
-    <li>Generate trade tickets</li>
-    <li>Involve our platform as escrow</li>
-    <li>Review trade history</li>
-  </ul>
-</main>
+    <div style="background-color: #2c2c2c; border-radius: 10px; padding: 24px; display: flex; flex-direction: column; gap: 20px;">
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <label for="your-trade-url" style="font-weight: 500;">Your Steam Trade URL</label>
+        <input id="your-trade-url" type="text" placeholder="https://steamcommunity.com/tradeoffer/new/?partner=..." style="padding: 10px; border-radius: 6px; background-color: #1e1e1e; border: 1px solid #444; color: #fff;">
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <label for="partner-trade-url" style="font-weight: 500;">Partner's Steam Trade URL</label>
+        <input id="partner-trade-url" type="text" placeholder="https://steamcommunity.com/tradeoffer/new/?partner=..." style="padding: 10px; border-radius: 6px; background-color: #1e1e1e; border: 1px solid #444; color: #fff;">
+      </div>
+
+      <div style="display: flex; gap: 10px;">
+        <button class="wallet-btn" style="padding: 12px 20px; font-size: 14px;">Start Escrow Trade</button>
+        <button style="padding: 12px 20px; font-size: 14px; border: 1px solid #555; background: transparent; color: #fff; border-radius: 6px; cursor: pointer;">Learn More</button>
+      </div>
+    </div>
+
+    <p style="font-size: 13px; margin-top: 24px; color: #888; max-width: 700px;">
+      Both users must send their items to SkinEmpire's official trade bot. Once all items are received, the exchange will be completed automatically.
+    </p>
+  </main>
 </body>
 </html>
