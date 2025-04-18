@@ -423,3 +423,44 @@ input[type="checkbox"] {
   font-size: 12px;
   color: #777;
 }
+
+/* === Footer === */
+.site-footer {
+  margin-top: 60px;
+  background-color: #111;
+  color: #aaa;
+  padding: 40px 60px;
+  font-size: 14px;
+}
+
+.site-footer h4 {
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.site-footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.site-footer a {
+  color: #aaa;
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
+
+.site-footer p {
+  margin: 0;
+  color: #ccc;
+}
+
+.site-footer .footer-columns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+}
