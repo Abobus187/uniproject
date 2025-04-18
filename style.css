@@ -297,10 +297,29 @@ input[type="checkbox"] {
   border-radius: 12px;
   padding: 20px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
 }
 
 .price-graph {
   margin: 10px 0;
+}
+
+.buy-btn {
+  padding: 10px 16px;
+  background-color: #2563EB;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.buy-btn:hover {
+  background-color: #1d4ed8;
 }
 
 /* === Portfolio Page === */
