@@ -4,6 +4,71 @@
   <meta charset="UTF-8" />
   <title>SkinEmpire - Bundles</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .bundle-info-btn {
+      color: #00BFFF;
+      font-size: 14px;
+      font-weight: 500;
+      background: none;
+      border: none;
+      cursor: pointer;
+      margin-bottom: 20px;
+      padding: 0;
+      text-align: left;
+    }
+
+    .bundle-info-btn:hover {
+      text-decoration: underline;
+    }
+
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(8px);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background-color: #2c2c2c;
+      padding: 24px 32px;
+      border-radius: 12px;
+      width: 90%;
+      max-width: 500px;
+      color: #fff;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+      position: relative;
+    }
+
+    .modal-content h2 {
+      margin-top: 0;
+      color: #00BFFF;
+    }
+
+    .modal-content p {
+      font-size: 15px;
+      color: #ccc;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 12px;
+      right: 16px;
+      background: none;
+      border: none;
+      font-size: 22px;
+      color: #aaa;
+      cursor: pointer;
+    }
+
+    .close-btn:hover {
+      color: #fff;
+    }
+  </style>
 </head>
 <body>
 
@@ -22,6 +87,8 @@
 
 <main class="main">
   <aside class="sidebar">
+    <button class="bundle-info-btn" onclick="openBundleInfo()">What are bundles?</button>
+
     <h3 class="filter-title">Bundle Type</h3>
     <div class="filter-group checkboxes">
       <label><input type="checkbox" checked> Skins</label>
@@ -96,6 +163,33 @@
     </div>
   </section>
 </main>
+
+<!-- Modal -->
+<div class="modal-overlay" id="bundleModal">
+  <div class="modal-content">
+    <button class="close-btn" onclick="closeBundleInfo()">&times;</button>
+    <h2>What are bundles?</h2>
+    <p>Bundles are curated collections of CS skins or cases grouped into themed loadouts or investment packs. They let you get a set of items with a single click — perfect for loadout upgrades, quick investments, or gifts.</p>
+  </div>
+</div>
+
+<script>
+  function openBundleInfo() {
+    document.getElementById('bundleModal').style.display = 'flex';
+  }
+
+  function closeBundleInfo() {
+    document.getElementById('bundleModal').style.display = 'none';
+  }
+
+  // Optional: Close when clicking outside the modal
+  window.addEventListener('click', function(e) {
+    const modal = document.getElementById('bundleModal');
+    if (e.target === modal) {
+      closeBundleInfo();
+    }
+  });
+</script>
 
 </body>
 </html>
