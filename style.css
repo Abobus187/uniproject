@@ -70,7 +70,10 @@ body {
 }
 
 .search-bar input {
+  display: block;
   width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
   padding: 10px 40px 10px 16px;
   border-radius: 20px;
   border: 1px solid #444;
