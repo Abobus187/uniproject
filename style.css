@@ -352,3 +352,49 @@ input[type="checkbox"] {
     flex-direction: column;
   }
 }
+/* === Search Bar === */
+.search-container {
+  display: flex;
+  align-items: center;
+  background-color: #2c2c2c;
+  border: 1px solid #444;
+  border-radius: 999px;
+  padding: 10px 16px;
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.search-input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 14px;
+  flex: 1;
+}
+
+.search-input::placeholder {
+  color: #888;
+}
+
+.search-icon {
+  color: #888;
+  font-size: 16px;
+  margin-left: 8px;
+  cursor: pointer;
+}
+
+/* === Optional Wrapper === */
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.marketplace-body {
+  display: flex;
+  gap: 40px;
+}
+
