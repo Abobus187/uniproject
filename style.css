@@ -71,6 +71,7 @@ body {
 
 .search-bar input {
   width: 100%;
+  max-width: 250px; /* Match the sidebar width or price slider */
   padding: 10px 40px 10px 16px;
   border-radius: 20px;
   border: 1px solid #444;
@@ -83,6 +84,7 @@ body {
   background-position: right 12px center;
   background-size: 16px;
 }
+
 
 /* === Filter Sidebar === */
 .filter-title {
