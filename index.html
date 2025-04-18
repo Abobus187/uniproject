@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
   <header class="navbar">
     <div class="nav-left">
       <h1>SkinEmpire</h1>
@@ -21,114 +22,113 @@
   </header>
 
   <main class="main">
-    <div class="content-wrapper">
+    <!-- Sidebar -->
+    <aside class="sidebar">
       <!-- 🔍 Search Bar -->
-      <div class="search-container">
-        <input type="text" class="search-input" placeholder="Search skins..." />
-        <span class="search-icon">🔍</span>
+      <div class="search-bar">
+        <input type="text" placeholder="Search skins..." />
       </div>
 
-      <div class="marketplace-body">
-        <aside class="sidebar">
-          <h3 class="filter-title">Price</h3>
-          <div class="filter-group">
-            <input type="range" min="0" max="1000" value="0" class="range-slider" />
-            <div class="range-inputs">
-              <input type="text" placeholder="from $0.00" />
-              <input type="text" placeholder="to ∞" />
-            </div>
-          </div>
-
-          <hr style="border-color: #333; margin: 20px 0" />
-
-          <h3 class="filter-title">Condition</h3>
-          <div class="filter-group checkboxes">
-            <label><input type="checkbox" checked /> Factory New</label>
-            <label><input type="checkbox" checked /> Minimal Wear</label>
-            <label><input type="checkbox" checked /> Field-Tested</label>
-            <label><input type="checkbox" checked /> Well-Worn</label>
-            <label><input type="checkbox" /> Battle-Scarred</label>
-          </div>
-
-          <button class="filter-button">SHOW EXACT WEAR</button>
-        </aside>
-
-        <section class="skin-grid">
-          <!-- Skin Cards -->
-          <div class="skin-card">
-            <img src="https://cdn.myskinport.com/images/ak47-redline.png" alt="AK-47 Redline" />
-            <div class="skin-info">
-              <h4>AK-47 | Redline</h4>
-              <p>Condition: Field-Tested</p>
-              <p>Float: 0.21</p>
-              <p>Price: $14.87</p>
-              <p class="performance-indicator positive">+2.3% 7d</p>
-              <button class="buy-btn">Trade</button>
-            </div>
-          </div>
-
-          <div class="skin-card">
-            <img src="https://cdn.myskinport.com/images/awp-asiimov.png" alt="AWP Asiimov" />
-            <div class="skin-info">
-              <h4>AWP | Asiimov</h4>
-              <p>Condition: Battle-Scarred</p>
-              <p>Float: 0.88</p>
-              <p>Price: $38.99</p>
-              <p class="performance-indicator negative">-1.1% 7d</p>
-              <button class="buy-btn">Trade</button>
-            </div>
-          </div>
-
-          <div class="skin-card">
-            <img src="https://cdn.myskinport.com/images/usp-s-kill-confirmed.png" alt="USP-S Kill Confirmed" />
-            <div class="skin-info">
-              <h4>USP-S | Kill Confirmed</h4>
-              <p>Condition: Minimal Wear</p>
-              <p>Float: 0.13</p>
-              <p>Price: $25.50</p>
-              <p class="performance-indicator positive">+5.2% 7d</p>
-              <button class="buy-btn">Trade</button>
-            </div>
-          </div>
-
-          <div class="skin-card">
-            <img src="https://cdn.myskinport.com/images/m4a1s-printstream.png" alt="M4A1-S Printstream" />
-            <div class="skin-info">
-              <h4>M4A1-S | Printstream</h4>
-              <p>Condition: Factory New</p>
-              <p>Float: 0.03</p>
-              <p>Price: $72.10</p>
-              <p class="performance-indicator positive">+0.7% 7d</p>
-              <button class="buy-btn">Trade</button>
-            </div>
-          </div>
-
-          <div class="skin-card">
-            <img src="https://cdn.myskinport.com/images/desert-eagle-blaze.png" alt="Desert Eagle Blaze" />
-            <div class="skin-info">
-              <h4>Deagle | Blaze</h4>
-              <p>Condition: Factory New</p>
-              <p>Float: 0.06</p>
-              <p>Price: $89.99</p>
-              <p class="performance-indicator positive">+4.9% 7d</p>
-              <button class="buy-btn">Trade</button>
-            </div>
-          </div>
-
-          <div class="skin-card">
-            <img src="https://cdn.myskinport.com/images/famas-mecha-industries.png" alt="FAMAS Mecha Industries" />
-            <div class="skin-info">
-              <h4>FAMAS | Mecha Industries</h4>
-              <p>Condition: Well-Worn</p>
-              <p>Float: 0.45</p>
-              <p>Price: $5.50</p>
-              <p class="performance-indicator negative">-0.3% 7d</p>
-              <button class="buy-btn">Trade</button>
-            </div>
-          </div>
-        </section>
+      <!-- 💲 Price Filter -->
+      <h3 class="filter-title">Price</h3>
+      <div class="filter-group">
+        <input type="range" min="0" max="1000" value="0" class="range-slider" />
+        <div class="range-inputs">
+          <input type="text" placeholder="from $0.00" />
+          <input type="text" placeholder="to ∞" />
+        </div>
       </div>
-    </div>
+
+      <hr style="border-color: #333; margin: 20px 0" />
+
+      <!-- 🛠 Condition -->
+      <h3 class="filter-title">Condition</h3>
+      <div class="filter-group checkboxes">
+        <label><input type="checkbox" checked /> Factory New</label>
+        <label><input type="checkbox" checked /> Minimal Wear</label>
+        <label><input type="checkbox" checked /> Field-Tested</label>
+        <label><input type="checkbox" checked /> Well-Worn</label>
+        <label><input type="checkbox" /> Battle-Scarred</label>
+      </div>
+
+      <button class="filter-button">SHOW EXACT WEAR</button>
+    </aside>
+
+    <!-- Grid of Skins -->
+    <section class="skin-grid">
+      <div class="skin-card">
+        <img src="https://cdn.myskinport.com/images/ak47-redline.png" alt="AK-47 Redline" />
+        <div class="skin-info">
+          <h4>AK-47 | Redline</h4>
+          <p>Condition: Field-Tested</p>
+          <p>Float: 0.21</p>
+          <p>Price: $14.87</p>
+          <p class="performance-indicator positive">+2.3% 7d</p>
+          <button class="buy-btn">Trade</button>
+        </div>
+      </div>
+
+      <div class="skin-card">
+        <img src="https://cdn.myskinport.com/images/awp-asiimov.png" alt="AWP Asiimov" />
+        <div class="skin-info">
+          <h4>AWP | Asiimov</h4>
+          <p>Condition: Battle-Scarred</p>
+          <p>Float: 0.88</p>
+          <p>Price: $38.99</p>
+          <p class="performance-indicator negative">-1.1% 7d</p>
+          <button class="buy-btn">Trade</button>
+        </div>
+      </div>
+
+      <div class="skin-card">
+        <img src="https://cdn.myskinport.com/images/usp-s-kill-confirmed.png" alt="USP-S Kill Confirmed" />
+        <div class="skin-info">
+          <h4>USP-S | Kill Confirmed</h4>
+          <p>Condition: Minimal Wear</p>
+          <p>Float: 0.13</p>
+          <p>Price: $25.50</p>
+          <p class="performance-indicator positive">+5.2% 7d</p>
+          <button class="buy-btn">Trade</button>
+        </div>
+      </div>
+
+      <div class="skin-card">
+        <img src="https://cdn.myskinport.com/images/m4a1s-printstream.png" alt="M4A1-S Printstream" />
+        <div class="skin-info">
+          <h4>M4A1-S | Printstream</h4>
+          <p>Condition: Factory New</p>
+          <p>Float: 0.03</p>
+          <p>Price: $72.10</p>
+          <p class="performance-indicator positive">+0.7% 7d</p>
+          <button class="buy-btn">Trade</button>
+        </div>
+      </div>
+
+      <div class="skin-card">
+        <img src="https://cdn.myskinport.com/images/desert-eagle-blaze.png" alt="Deagle Blaze" />
+        <div class="skin-info">
+          <h4>Deagle | Blaze</h4>
+          <p>Condition: Factory New</p>
+          <p>Float: 0.06</p>
+          <p>Price: $89.99</p>
+          <p class="performance-indicator positive">+4.9% 7d</p>
+          <button class="buy-btn">Trade</button>
+        </div>
+      </div>
+
+      <div class="skin-card">
+        <img src="https://cdn.myskinport.com/images/famas-mecha-industries.png" alt="FAMAS Mecha Industries" />
+        <div class="skin-info">
+          <h4>FAMAS | Mecha Industries</h4>
+          <p>Condition: Well-Worn</p>
+          <p>Float: 0.45</p>
+          <p>Price: $5.50</p>
+          <p class="performance-indicator negative">-0.3% 7d</p>
+          <button class="buy-btn">Trade</button>
+        </div>
+      </div>
+    </section>
   </main>
+
 </body>
 </html>
