@@ -179,7 +179,9 @@
         <li><a href="#" style="color: #aaa; text-decoration: none;">Datenschutz</a></li>
         <li><a href="#" style="color: #aaa; text-decoration: none;">Impressum</a></li>
         <li><a href="#" style="color: #aaa; text-decoration: none;">AGB</a></li>
+        <li><a href="#how-we-make-money" onclick="openHowWeMakeMoney()" style="cursor: pointer;">How We Make Money</a></li>
       </ul>
+     
     </div>
     <div>
       <h4 style="color: #fff; margin-bottom: 16px;">Folge uns</h4>
@@ -198,7 +200,29 @@
     </div>
   </div>
 </footer>
+<div class="popup-overlay" id="popup-how-we-make-money">
+  <div class="popup-content">
+    <h2 style="color: #00BFFF;">💼 How SkinEmpire Makes Money</h2>
+    <p>Transparency matters. Here’s exactly how SkinEmpire generates revenue to keep the platform running while remaining affordable and fair for users.</p>
 
+    <div class="popup-section">
+      <h3>🔐 SafeSwap Escrow Service</h3>
+      <p>We charge a <strong>2% service fee</strong> on every completed SafeSwap escrow trade. This covers bot maintenance, fraud prevention, server hosting, and ongoing development.</p>
+    </div>
+
+    <div class="popup-section">
+      <h3>🛒 Marketplace Trades</h3>
+      <p>Our marketplace includes an integrated commission into sale prices, plus a flat <strong>0.5% selling fee</strong> per item sold — among the lowest in the market.</p>
+    </div>
+
+    <div class="popup-section">
+      <h3>📈 Bundles & ETF-Style Portfolios</h3>
+      <p>Purchases of skin bundles or ETF-style portfolios help support the platform while giving users more flexible investing options.</p>
+    </div>
+
+    <button class="popup-close" onclick="closeHowWeMakeMoney()">Close</button>
+  </div>
+</div>
 <script>
   function openBundleInfo() {
     document.getElementById('bundleModal').style.display = 'flex';
@@ -212,6 +236,13 @@
       closeBundleInfo();
     }
   });
+  function openHowWeMakeMoney() {
+  document.getElementById('popup-how-we-make-money').style.display = 'flex';
+}
+function closeHowWeMakeMoney() {
+  document.getElementById('popup-how-we-make-money').style.display = 'none';
+}
+
 </script>
 
 </body>
