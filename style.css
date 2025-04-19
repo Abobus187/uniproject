@@ -673,3 +673,73 @@ input[type="checkbox"] {
     transform: translateY(0);
   }
 }
+/* === Mobile Responsiveness Fixes === */
+
+/* 1. Navbar stacks vertically on small screens */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .nav-left,
+  .nav-right {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .nav-left h1 {
+    margin-bottom: 8px;
+  }
+
+  .wallet-btn {
+    width: 100%;
+  }
+}
+
+/* 2. Responsive Grid Layout for cards and bundles */
+.skin-grid,
+.bundle-grid {
+  grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+}
+
+@media (min-width: 480px) {
+  .skin-grid,
+  .bundle-grid {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  }
+}
+
+/* 3. Modal and Popup Responsiveness */
+.modal-content,
+.popup-content {
+  width: 90%;
+  max-width: 500px;
+  padding: 20px;
+  font-size: 14px;
+}
+
+/* 4. Font scaling for mobile screens */
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+
+  .filter-title,
+  .bundle-card p,
+  .modal-content p {
+    font-size: 13px;
+  }
+
+  .nav-link {
+    font-size: 14px;
+  }
+}
+
+/* 5. Safe padding for notched phones */
+body {
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+}
