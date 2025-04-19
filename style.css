@@ -635,3 +635,6 @@ input[type="checkbox"] {
     inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
+.sidebar {
+  background: linear-gradient(180deg, #2c2c2c 0%, #252525 100%);
+}
