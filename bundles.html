@@ -20,48 +20,6 @@
     .bundle-info-btn:hover {
       text-decoration: underline;
     }
-    .modal-overlay {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background-color: rgba(0, 0, 0, 0.6);
-      backdrop-filter: blur(8px);
-      z-index: 1000;
-      justify-content: center;
-      align-items: center;
-    }
-    .modal-content {
-      background-color: #2c2c2c;
-      padding: 24px 32px;
-      border-radius: 12px;
-      width: 90%;
-      max-width: 500px;
-      color: #fff;
-      text-align: center;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-      position: relative;
-    }
-    .modal-content h2 {
-      margin-top: 0;
-      color: #00BFFF;
-    }
-    .modal-content p {
-      font-size: 15px;
-      color: #ccc;
-    }
-    .close-btn {
-      position: absolute;
-      top: 12px;
-      right: 16px;
-      background: none;
-      border: none;
-      font-size: 22px;
-      color: #aaa;
-      cursor: pointer;
-    }
-    .close-btn:hover {
-      color: #fff;
-    }
   </style>
 </head>
 <body>
@@ -73,8 +31,7 @@
     <a class="nav-link active" href="#">Bundles</a>
     <a class="nav-link" href="portfolio.html">Portfolio</a>
     <a class="nav-link" href="safeswap.html">SafeSwap</a>
-    <a class="nav-link" href="#" style="position: relative;">
-    </a>
+    <a class="nav-link" href="#" style="position: relative;"></a>
   </div>
   <div class="nav-right">
     <button class="wallet-btn">Connect Steam account</button>
@@ -167,34 +124,55 @@
 </div>
 
 <!-- Footer from index page -->
-<footer class="site-footer" style="margin-top: 60px; background-color: #111; color: #aaa; padding: 40px 60px; font-size: 14px;">
-  <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px;">
+<footer class="site-footer">
+  <div class="footer-columns">
     <div>
-      <h4 style="color: #fff; margin-bottom: 16px;">Rechtliches</h4>
-      <ul style="list-style: none; padding: 0; margin: 0;">
-        <li><a href="#" style="color: #aaa; text-decoration: none;">FAQ</a></li>
-        <li><a href="#" style="color: #aaa; text-decoration: none;">Support</a></li>
-        <li><a href="#" style="color: #aaa; text-decoration: none;">Datenschutz</a></li>
-        <li><a href="#" style="color: #aaa; text-decoration: none;">Impressum</a></li>
-        <li><a href="#" style="color: #aaa; text-decoration: none;">AGB</a></li>
-        <li><a href="#how-we-make-money" onclick="openHowWeMakeMoney()" style="cursor: pointer;">How We Make Money</a></li>
+      <h4>Rechtliches</h4>
+      <ul>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Support</a></li>
+        <li><a href="#">Datenschutz</a></li>
+        <li><a href="#">Impressum</a></li>
+        <li><a href="#">AGB</a></li>
+        <li><a href="#how-we-make-money" onclick="openHowWeMakeMoney()">How We Make Money</a></li>
       </ul>
-     
     </div>
     <div>
-      <h4 style="color: #fff; margin-bottom: 16px;">Folge uns</h4>
+      <h4>Folge uns</h4>
       <div style="display: flex; gap: 12px;">
-        <a href="#" style="color: #aaa;">Discord</a>
-        <a href="#" style="color: #aaa;">Instagram</a>
-        <a href="#" style="color: #aaa;">X</a>
-        <a href="#" style="color: #aaa;">TikTok</a>
-        <a href="#" style="color: #aaa;">YouTube</a>
+        <a href="#">Discord</a>
+        <a href="#">Instagram</a>
+        <a href="#">X</a>
+        <a href="#">TikTok</a>
+        <a href="#">YouTube</a>
       </div>
     </div>
     <div>
-      <h4 style="color: #fff; margin-bottom: 16px;">Kontakt</h4>
-      <p style="margin: 0; color: #ccc;">info@skinempiresite.com</p>
-      <p style="margin-top: 8px; font-size: 13px; color: #777;">© 2025 SkinEmpire<br>Nicht verbunden mit Valve Corp.</p>
+      <h4>Kontakt</h4>
+      <p>info@skinempiresite.com</p>
+      <p style="margin-top: 8px; font-size: 13px; color: #777;">
+        © 2025 SkinEmpire<br>
+        Nicht verbunden mit Valve Corp.
+      </p>
+    </div>
+  </div>
+  <div class="popup-overlay" id="popup-how-we-make-money">
+    <div class="popup-content">
+      <h2>💼 How SkinEmpire Makes Money</h2>
+      <p>Transparency matters. Here’s exactly how SkinEmpire generates revenue to keep the platform running while remaining affordable and fair for users.</p>
+      <div class="popup-section">
+        <h3>🔐 SafeSwap Escrow Service</h3>
+        <p>We charge a <strong>2% service fee</strong> on every completed SafeSwap escrow trade. This covers bot maintenance, fraud prevention, server hosting, and ongoing development.</p>
+      </div>
+      <div class="popup-section">
+        <h3>🛒 Marketplace Trades</h3>
+        <p>Our marketplace includes an integrated commission into sale prices, plus a flat <strong>0.5% selling fee</strong> per item sold — among the lowest in the market.</p>
+      </div>
+      <div class="popup-section">
+        <h3>📈 Bundles & ETF-Style Portfolios</h3>
+        <p>Purchases of skin bundles or ETF-style portfolios help support the platform while giving users more flexible investing options.</p>
+      </div>
+      <button class="popup-close" onclick="closeHowWeMakeMoney()">Close</button>
     </div>
   </div>
 </footer>
@@ -235,12 +213,11 @@
     }
   });
   function openHowWeMakeMoney() {
-  document.getElementById('popup-how-we-make-money').style.display = 'flex';
-}
-function closeHowWeMakeMoney() {
-  document.getElementById('popup-how-we-make-money').style.display = 'none';
-}
-
+    document.getElementById('popup-how-we-make-money').style.display = 'flex';
+  }
+  function closeHowWeMakeMoney() {
+    document.getElementById('popup-how-we-make-money').style.display = 'none';
+  }
 </script>
 
 </body>
