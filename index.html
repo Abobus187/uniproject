@@ -12,7 +12,8 @@
       left: 0;
       width: 100vw;
       height: 100vh;
-      background: rgba(0, 0, 0, 0.8);
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(6px);
       display: none;
       justify-content: center;
       align-items: center;
@@ -33,7 +34,7 @@
     .popup-content h2 {
       font-size: 26px;
       font-weight: bold;
-      color: #fff;
+      color: #00BFFF;
       margin-top: 0;
     }
 
@@ -64,10 +65,6 @@
       color: white;
       border: none;
       border-radius: 6px;
-      cursor: pointer;
-    }
-
-    .footer-columns ul li a[href="#how-we-make-money"] {
       cursor: pointer;
     }
   </style>
@@ -232,7 +229,7 @@
   </main>
 
   <!-- Footer -->
-   <footer class="site-footer" style="margin-top: 60px; background-color: #111; color: #aaa; padding: 40px 60px; font-size: 14px;">
+ <footer class="site-footer" style="margin-top: 60px; background-color: #111; color: #aaa; padding: 40px 60px; font-size: 14px;">
     <div class="footer-columns">
       <div>
         <h4 style="color: #fff; margin-bottom: 16px;">Rechtliches</h4>
@@ -264,29 +261,29 @@
         </p>
       </div>
     </div>
-     <div class="popup-overlay" id="popup-how-we-make-money">
-    <div class="popup-content">
-      <h2>💼 How SkinEmpire Makes Money</h2>
-      <p>Transparency matters. Here’s exactly how SkinEmpire generates revenue to keep the platform running while remaining affordable and fair for users.</p>
+    <div class="popup-overlay" id="popup-how-we-make-money">
+      <div class="popup-content">
+        <h2>💼 How SkinEmpire Makes Money</h2>
+        <p>Transparency matters. Here’s exactly how SkinEmpire generates revenue to keep the platform running while remaining affordable and fair for users.</p>
 
-      <div class="popup-section">
-        <h3>🔐 SafeSwap Escrow Service</h3>
-        <p>We charge a <strong>2% service fee</strong> on the value of every completed SafeSwap escrow trade. This covers bot maintenance, fraud prevention, server hosting, and ongoing development.</p>
+        <div class="popup-section">
+          <h3>🔐 SafeSwap Escrow Service</h3>
+          <p>We charge a <strong>2% service fee</strong> on the value of every completed SafeSwap escrow trade. This covers bot maintenance, fraud prevention, server hosting, and ongoing development.</p>
+        </div>
+
+        <div class="popup-section">
+          <h3>🚲 Marketplace Trades</h3>
+          <p>Our marketplace includes an integrated commission into its sale prices. In addition, we charge a flat <strong>0.5% selling fee</strong> per item sold — one of the lowest rates in the market. Our goal is to keep fees minimal while maintaining a secure and seamless experience.</p>
+        </div>
+
+        <div class="popup-section">
+          <h3>📈 Bundles & ETF-Style Portfolios</h3>
+          <p>Purchases of skin bundles or ETF-style portfolios help support our platform. It’s an optional way for users to invest in diverse assets while contributing to the ecosystem.</p>
+        </div>
+
+        <button class="popup-close" onclick="closeHowWeMakeMoney()">Close</button>
       </div>
-
-      <div class="popup-section">
-        <h3>🛒 Marketplace Trades</h3>
-        <p>Our marketplace includes an integrated commission into its sale prices. In addition, we charge a flat <strong>0.5% selling fee</strong> per item sold — one of the lowest rates in the market. Our goal is to keep fees minimal while maintaining a secure and seamless experience.</p>
-      </div>
-
-      <div class="popup-section">
-        <h3>📈 Bundles & ETF-Style Portfolios</h3>
-        <p>Purchases of skin bundles or ETF-style portfolios help support our platform. It’s an optional way for users to invest in diverse assets while contributing to the ecosystem.</p>
-      </div>
-
-      <button class="popup-close" onclick="closeHowWeMakeMoney()">Close</button>
     </div>
-  </div>
   </footer>
    <script>
     function openHowWeMakeMoney() {
