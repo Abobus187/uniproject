@@ -902,11 +902,6 @@ body {
   cursor: pointer;
 }
 
-.skin-card-v2:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
-}
-
 .skin-card-v2 img {
   max-width: 100%;
   object-fit: contain;
@@ -1172,18 +1167,3 @@ body {
 .skin-grid {
   align-self: flex-start; /* prevents it from stretching to match sidebar height */
 }
-/* Force hover movement on trade page cards */
-.skin-card-v2:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-/* FINAL OVERRIDE: Make all trade cards float like Portfolio cards */
-.skin-card-v2:hover {
-  transform: translateY(-3px);
-  box-shadow:
-    0 4px 10px rgba(0, 0, 0, 0.5),
-    inset 0 1px 0 rgba(255, 255, 255, 0.05);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
