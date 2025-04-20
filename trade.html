@@ -206,43 +206,41 @@
       </div>
     </aside>
 
-    <section class="skin-grid">
-      <div class="skin-card-v2">
-        <div class="badge">Trending Up</div>
-        <div class="img-wrapper">
-          <img src="https://cdn.skinport.com/cdn-cgi/image/width=256,height=128,fit=pad,format=avif,quality=85,background=transparent/images/screenshots/443244433/playside.png" alt="Asiimov">
-        </div>
-        <h4 class="skin-name">Asiimov</h4>
-        <p class="skin-type">AWP · Field-Tested</p>
-        <div class="price-section">
-          <div class="main-price">198,00 €</div>
-          <div class="performance"><span class="change-positive">+2.14%</span></div>
-        </div>
-        <div class="sparkline-container"><canvas id="sparkline1"></canvas></div>
-        <div class="button-row">
-          <button class="long-btn">Long</button>
-          <button class="short-btn">Short</button>
-        </div>
-      </div>
+    <!-- Replace the two skin-card-v2 blocks inside your <section class="skin-grid"> with this: -->
 
-      <div class="skin-card-v2">
-        <div class="badge">Trending Down</div>
-        <div class="img-wrapper">
-          <img src="https://cdn.skinport.com/cdn-cgi/image/width=256,height=128,fit=pad,format=avif,quality=85,background=transparent/images/screenshots/451110733/playside.png" alt="Kill Confirmed">
-        </div>
-        <h4 class="skin-name">Kill Confirmed</h4>
-        <p class="skin-type">USP-S · Factory New</p>
-        <div class="price-section">
-          <div class="main-price">58,90 €</div>
-          <div class="performance"><span class="change-negative">-1.72%</span></div>
-        </div>
-        <div class="sparkline-container"><canvas id="sparkline2"></canvas></div>
-        <div class="button-row">
-          <button class="long-btn">Long</button>
-          <button class="short-btn">Short</button>
-        </div>
-      </div>
-    </section>
+<section class="skin-grid">
+  <!-- AWP Asiimov -->
+  <div class="skin-card-v2">
+    <div class="badge">Trending Up</div>
+    <div class="img-wrapper">
+      <img src="https://cdn.skinport.com/cdn-cgi/image/width=256,height=128,fit=pad,format=avif,quality=85,background=transparent/images/screenshots/443244433/playside.png" alt="Asiimov">
+    </div>
+    <h4 class="skin-name">Asiimov</h4>
+    <p class="skin-type">AWP · Field-Tested</p>
+    <div class="performance"><span class="change-positive">+2.14%</span></div>
+    <div class="sparkline-container"><canvas id="sparkline1"></canvas></div>
+    <div class="button-row">
+      <button class="long-btn">Long @ 198,50 €</button>
+      <button class="short-btn">Short @ 197,50 €</button>
+    </div>
+  </div>
+
+  <!-- USP-S Kill Confirmed -->
+  <div class="skin-card-v2">
+    <div class="badge">Trending Down</div>
+    <div class="img-wrapper">
+      <img src="https://cdn.skinport.com/cdn-cgi/image/width=256,height=128,fit=pad,format=avif,quality=85,background=transparent/images/screenshots/451110733/playside.png" alt="Kill Confirmed">
+    </div>
+    <h4 class="skin-name">Kill Confirmed</h4>
+    <p class="skin-type">USP-S · Factory New</p>
+    <div class="performance"><span class="change-negative">-1.72%</span></div>
+    <div class="sparkline-container"><canvas id="sparkline2"></canvas></div>
+    <div class="button-row">
+      <button class="long-btn">Long @ 59,20 €</button>
+      <button class="short-btn">Short @ 58,60 €</button>
+    </div>
+  </div>
+</section>
   </main>
 
   <script>
