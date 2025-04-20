@@ -1013,4 +1013,36 @@ body {
   font-weight: bold;
   border: 1px solid #4ade80;
 }
+.img-wrapper {
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.img-wrapper img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.sparkline-container {
+  margin: 8px 0 0;
+  display: flex;
+  justify-content: center;
+}
+
+.sparkline-img {
+  height: 32px;
+  max-width: 80%;
+  object-fit: contain;
+}
+
+.button-row {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 12px;
+}
 
