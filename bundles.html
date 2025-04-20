@@ -1,27 +1,29 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <title>SkinsVault - Bundles</title>
   <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
-  .bundle-info-btn {
-    color: #00BFFF;
-    font-size: 14px;
-    font-weight: bold;
-    background: none;
-    border: none;
-    cursor: pointer;
-    margin-bottom: 20px;
-    padding: 0;
-    text-align: left;
-  }
-</style>
+    .bundle-info-btn {
+      color: #00BFFF;
+      font-size: 14px;
+      font-weight: bold;
+      background: none;
+      border: none;
+      cursor: pointer;
+      margin-bottom: 20px;
+      padding: 0;
+      text-align: left;
+    }
+    .price-graph canvas {
+      width: 100% !important;
+      height: 30px !important;
+    }
+  </style>
 </head>
 <body>
-
 <header class="navbar">
   <div class="nav-left">
     <h1>SkinsVault</h1>
@@ -29,13 +31,11 @@
     <a class="nav-link active" href="#">Bundles</a>
     <a class="nav-link" href="portfolio.html">Portfolio</a>
     <a class="nav-link" href="safeswap.html">SafeSwap</a>
-    <a class="nav-link" href="#" style="position: relative;"></a>
   </div>
   <div class="nav-right">
     <button class="wallet-btn">Connect Steam account</button>
   </div>
 </header>
-
 <main class="main">
   <aside class="sidebar">
     <button class="bundle-info-btn" onclick="openBundleInfo()">What are bundles?</button>
@@ -60,163 +60,82 @@
       <label><input type="checkbox"> Risky</label>
     </div>
   </aside>
-
   <section class="bundle-grid">
     <div class="bundle-card">
       <h4>🎯 Rifle Meta Bundle</h4>
-      <div class="price-graph"><svg width="100%" height="30"><polyline fill="none" stroke="#4ade80" stroke-width="3" points="0,25 20,20 40,15 60,10 80,8 100,5"/></svg></div>
+      <div class="price-graph"><canvas id="bundleChart1"></canvas></div>
       <p>Includes: AK-47 | Redline, M4A1-S | Printstream, Galil AR | Chatterbox</p>
       <p>Total Price: $198.50</p>
       <button class="buy-btn">Buy Bundle</button>
     </div>
-
     <div class="bundle-card">
       <h4>💼 Budget Loadout</h4>
-      <div class="price-graph"><svg width="100%" height="30"><polyline fill="none" stroke="#4ade80" stroke-width="3" points="0,20 20,22 40,18 60,24 80,21 100,19"/></svg></div>
+      <div class="price-graph"><canvas id="bundleChart2"></canvas></div>
       <p>Includes: FAMAS | Mecha Industries, Glock-18 | Candy Apple, Nova | Sand Dune</p>
       <p>Total Price: $39.99</p>
       <button class="buy-btn">Buy Bundle</button>
     </div>
-
     <div class="bundle-card">
       <h4>🔥 Top 5 Cases</h4>
-      <div class="price-graph"><svg width="100%" height="30"><polyline fill="none" stroke="#facc15" stroke-width="3" points="0,15 20,15 40,15 60,15 80,15 100,15"/></svg></div>
+      <div class="price-graph"><canvas id="bundleChart3"></canvas></div>
       <p>Includes: Recoil, Prisma 2, Clutch, Operation Riptide, Revolution</p>
       <p>Total Price: $11.25</p>
       <button class="buy-btn">Buy Bundle</button>
     </div>
-
     <div class="bundle-card">
       <h4>🔫 Starter Loadout</h4>
-      <div class="price-graph"><svg width="100%" height="30"><polyline fill="none" stroke="#f87171" stroke-width="3" points="0,10 20,12 40,16 60,22 80,26 100,28"/></svg></div>
+      <div class="price-graph"><canvas id="bundleChart4"></canvas></div>
       <p>Includes: MP9 | Starlight Protector, P250 | See Ya Later, MAC-10 | Neon Rider</p>
       <p>Total Price: $22.40</p>
       <button class="buy-btn">Buy Bundle</button>
     </div>
-
     <div class="bundle-card">
-      <h4>🧊 Arctic Ops</h4>
-      <div class="price-graph"><svg width="100%" height="30"><polyline fill="none" stroke="#60a5fa" stroke-width="3" points="0,18 20,17 40,15 60,19 80,22 100,21"/></svg></div>
+      <h4>❄️ Arctic Ops</h4>
+      <div class="price-graph"><canvas id="bundleChart5"></canvas></div>
       <p>Includes: AWP | Neo-Noir, AUG | Arctic Wolf, G3SG1 | Polar Camo</p>
       <p>Total Price: $84.75</p>
       <button class="buy-btn">Buy Bundle</button>
     </div>
-
     <div class="bundle-card">
-      <h4>🟣 Purple Reign</h4>
-      <div class="price-graph"><svg width="100%" height="30"><polyline fill="none" stroke="#c084fc" stroke-width="3" points="0,24 20,23 40,20 60,22 80,24 100,25"/></svg></div>
+      <h4>🔸 Purple Reign</h4>
+      <div class="price-graph"><canvas id="bundleChart6"></canvas></div>
       <p>Includes: USP-S | Purple DDPAT, Nova | Hyper Beast, Galil AR | Sugar Rush</p>
       <p>Total Price: $46.30</p>
       <button class="buy-btn">Buy Bundle</button>
     </div>
   </section>
 </main>
-
-<!-- Modal -->
-<div class="modal-overlay" id="bundleModal">
-  <div class="modal-content">
-    <button class="close-btn" onclick="closeBundleInfo()">&times;</button>
-    <h2>What are bundles?</h2>
-    <p>Think of bundles like ETFs for CS:GO. Each bundle is a curated collection of skins grouped by theme, rarity, or performance. Instead of buying the skins themselves, you're investing in shares of the total bundle value.<br><br>You don’t own or use the individual items — but your shares track the performance of the bundle as a whole. Whether you’re aiming for growth, diversification, or skin market exposure, bundles give you a hands-off way to participate in the CS:GO economy.</p>
-  </div>
-</div>
-
-<!-- Footer from index page -->
-<footer class="site-footer">
-  <div class="footer-columns">
-    <div>
-      <h4>Rechtliches</h4>
-      <ul>
-        <li><a href="#">FAQ</a></li>
-        <li><a href="#">Support</a></li>
-        <li><a href="#">Datenschutz</a></li>
-        <li><a href="#">Impressum</a></li>
-        <li><a href="#">AGB</a></li>
-        <li><a href="#how-we-make-money" onclick="openHowWeMakeMoney()">How We Make Money</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4>Folge uns</h4>
-      <div style="display: flex; gap: 12px;">
-        <a href="#">Discord</a>
-        <a href="#">Instagram</a>
-        <a href="#">X</a>
-        <a href="#">TikTok</a>
-        <a href="#">YouTube</a>
-      </div>
-    </div>
-    <div>
-      <h4>Kontakt</h4>
-      <p>info@skinsvaultsite.com</p>
-      <p style="margin-top: 8px; font-size: 13px; color: #777;">
-        © 2025 SkinsVault<br>
-        Nicht verbunden mit Valve Corp.
-      </p>
-    </div>
-  </div>
-  <div class="popup-overlay" id="popup-how-we-make-money">
-    <div class="popup-content">
-      <h2>💼 How SkinsVaut Makes Money</h2>
-      <p>Transparency matters. Here’s exactly how SkinsVault generates revenue to keep the platform running while remaining affordable and fair for users.</p>
-      <div class="popup-section">
-        <h3>🔐 SafeSwap Escrow Service</h3>
-        <p>We charge a <strong>2% service fee</strong> on every completed SafeSwap escrow trade. This covers bot maintenance, fraud prevention, server hosting, and ongoing development.</p>
-      </div>
-      <div class="popup-section">
-        <h3>🛒 Marketplace Trades</h3>
-        <p>Our marketplace includes an integrated commission into sale prices, plus a flat <strong>0.5% selling fee</strong> per item sold — among the lowest in the market.</p>
-      </div>
-      <div class="popup-section">
-        <h3>📈 Bundles & ETF-Style Portfolios</h3>
-        <p>Purchases of skin bundles or ETF-style portfolios help support the platform while giving users more flexible investing options.</p>
-      </div>
-      <button class="popup-close" onclick="closeHowWeMakeMoney()">Close</button>
-    </div>
-  </div>
-</footer>
-<div class="popup-overlay" id="popup-how-we-make-money">
-  <div class="popup-content">
-    <h2>💼 How SkinsVault Makes Money</h2>
-    <p>Transparency matters. Here’s exactly how SkinsVault generates revenue to keep the platform running while remaining affordable and fair for users.</p>
-
-    <div class="popup-section">
-      <h3>🔐 SafeSwap Escrow Service</h3>
-      <p>We charge a <strong>2% service fee</strong> on every completed SafeSwap escrow trade. This covers bot maintenance, fraud prevention, server hosting, and ongoing development.</p>
-    </div>
-
-    <div class="popup-section">
-      <h3>🛒 Marketplace Trades</h3>
-      <p>Our marketplace includes an integrated commission into sale prices, plus a flat <strong>0.5% selling fee</strong> per item sold — among the lowest in the market.</p>
-    </div>
-
-    <div class="popup-section">
-      <h3>📈 Bundles & ETF-Style Portfolios</h3>
-      <p>Purchases of skin bundles or ETF-style portfolios help support the platform while giving users more flexible investing options.</p>
-    </div>
-
-    <button class="popup-close" onclick="closeHowWeMakeMoney()">Close</button>
-  </div>
-</div>
 <script>
-  function openBundleInfo() {
-    document.getElementById('bundleModal').style.display = 'flex';
-  }
-  function closeBundleInfo() {
-    document.getElementById('bundleModal').style.display = 'none';
-  }
-  window.addEventListener('click', function(e) {
-    const modal = document.getElementById('bundleModal');
-    if (e.target === modal) {
-      closeBundleInfo();
-    }
+  const bundleCharts = [
+    { id: "bundleChart1", data: [90, 94, 100, 104, 108, 112], color: "#4ade80" },
+    { id: "bundleChart2", data: [40, 42, 41, 43, 39, 40], color: "#4ade80" },
+    { id: "bundleChart3", data: [11.5, 11.6, 11.7, 11.6, 11.5, 11.25], color: "#facc15" },
+    { id: "bundleChart4", data: [20, 21, 21.5, 22, 22.1, 22.4], color: "#f87171" },
+    { id: "bundleChart5", data: [82, 83, 84, 85, 84.5, 84.75], color: "#60a5fa" },
+    { id: "bundleChart6", data: [45.5, 45.7, 46, 46.2, 46.1, 46.3], color: "#c084fc" }
+  ];
+  bundleCharts.forEach(bundle => {
+    new Chart(document.getElementById(bundle.id), {
+      type: "line",
+      data: {
+        labels: Array(bundle.data.length).fill(""),
+        datasets: [{
+          data: bundle.data,
+          borderColor: bundle.color,
+          borderWidth: 2,
+          fill: false,
+          tension: 0.3
+        }]
+      },
+      options: {
+        plugins: { legend: { display: false } },
+        scales: { x: { display: false }, y: { display: false } },
+        elements: { point: { radius: 0 } },
+        responsive: true,
+        maintainAspectRatio: false
+      }
+    });
   });
-  function openHowWeMakeMoney() {
-    document.getElementById('popup-how-we-make-money').style.display = 'flex';
-  }
-  function closeHowWeMakeMoney() {
-    document.getElementById('popup-how-we-make-money').style.display = 'none';
-  }
 </script>
-
 </body>
 </html>
