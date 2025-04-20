@@ -886,4 +886,131 @@ body {
   border-radius: 8px;
   cursor: pointer;
 }
+/* === Trade Page Enhancements === */
+
+.skin-card-v2 {
+  position: relative;
+  background-color: #2c2c2c;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 14px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.skin-card-v2:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+}
+
+.skin-card-v2 img {
+  max-width: 100%;
+  object-fit: contain;
+  border-radius: 6px;
+  max-height: 140px;
+  margin: 0 auto;
+}
+
+.skin-name {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+  color: #fff;
+}
+
+.skin-type {
+  font-size: 13px;
+  color: #aaa;
+  margin: 0;
+}
+
+.main-price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.price-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.performance {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.performance span {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.change-positive {
+  color: #4ade80;
+}
+
+.change-negative {
+  color: #f87171;
+}
+
+.sparkline {
+  height: 24px;
+  width: 60px;
+  object-fit: contain;
+  filter: brightness(1.2);
+}
+
+/* Buttons for long/short */
+.button-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.long-btn,
+.short-btn {
+  flex: 1;
+  padding: 10px 0;
+  font-weight: bold;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.long-btn {
+  background-color: #22c55e;
+}
+
+.short-btn {
+  background-color: #ef4444;
+}
+
+.long-btn:hover,
+.short-btn:hover {
+  transform: translateY(-1px);
+  /* Keep background color unchanged on hover */
+}
+
+/* Make badge smaller and top-left aligned */
+.badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background-color: #111;
+  color: #4ade80;
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+  border: 1px solid #4ade80;
+}
 
