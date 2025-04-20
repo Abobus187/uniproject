@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trade | SkinsVault</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="nav-left">
+      <h1>SkinsVault</h1>
+      <a class="nav-link" href="index.html">Marketplace</a>
+      <a class="nav-link" href="bundles.html">Bundles</a>
+      <a class="nav-link" href="portfolio.html">Portfolio</a>
+      <a class="nav-link" href="safeswap.html">SafeSwap</a>
+      <a class="nav-link active" href="trade.html">Trade</a>
+    </div>
+    <div class="nav-right">
+      <button class="wallet-btn">Connect Steam account</button>
+    </div>
+  </header>
+
+  <main class="main">
+    <aside class="sidebar">
+      <div class="search-bar">
+        <input type="text" placeholder="Search skins to trade..." />
+      </div>
+
+      <h3 class="filter-title">Trend</h3>
+      <div class="filter-group checkboxes">
+        <label><input type="checkbox" checked> Trending Up</label>
+        <label><input type="checkbox"> Trending Down</label>
+        <label><input type="checkbox"> Stable</label>
+      </div>
+
+      <h3 class="filter-title">Item Type</h3>
+      <div class="filter-group checkboxes">
+        <label><input type="checkbox" checked> Skins</label>
+        <label><input type="checkbox"> Cases</label>
+        <label><input type="checkbox"> Stickers</label>
+      </div>
+
+      <h3 class="filter-title">Condition</h3>
+      <div class="filter-group checkboxes">
+        <label><input type="checkbox" checked> Factory New</label>
+        <label><input type="checkbox"> Minimal Wear</label>
+        <label><input type="checkbox"> Field-Tested</label>
+        <label><input type="checkbox"> Well-Worn</label>
+        <label><input type="checkbox"> Battle-Scarred</label>
+      </div>
+    </aside>
+
+    <section class="skin-grid">
+      <!-- Example Trading Card -->
+      <div class="skin-card-v2">
+        <div class="badge">Trending Up</div>
+        <img src="https://cdn.skinport.com/cdn-cgi/image/width=256,height=128,fit=pad,format=auto/images/screenshots/454889828/playside.png" alt="AWP Asiimov" />
+        <div class="price-section">
+          <div class="main-price">198,00 €</div>
+          <div class="suggested-price">Yesterday: 184,50 €</div>
+        </div>
+        <div class="item-info">
+          <div class="rarity">AWP</div>
+          <h4 class="skin-name">Asiimov</h4>
+          <p class="skin-subinfo">Field-Tested</p>
+        </div>
+        <div class="wear-bar">
+          <span class="float">0.255</span>
+          <div class="bar">
+            <div class="wear-indicator" style="left:25.5%;"></div>
+          </div>
+        </div>
+        <div style="display: flex; gap: 10px; margin-top: 12px;">
+          <button class="buy-btn" style="flex: 1; background-color: #22c55e;">Long</button>
+          <button class="buy-btn" style="flex: 1; background-color: #ef4444;">Short</button>
+        </div>
+      </div>
+
+      <!-- Repeat trading cards similarly -->
+
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <!-- Reuse your existing footer from index.html -->
+  </footer>
+</body>
+</html>
