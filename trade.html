@@ -5,6 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Trade | SkinsVault</title>
   <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    .sparkline {
+      display: block;
+      margin-top: 6px;
+    }
+    .performance {
+      font-size: 13px;
+      color: #4ade80;
+      margin-top: 4px;
+    }
+    .change-negative {
+      color: #f87171;
+    }
+  </style>
 </head>
 <body>
   <header class="navbar">
@@ -52,96 +67,35 @@
     </aside>
 
     <section class="skin-grid">
-      <!-- Card 1 -->
+      <!-- Trading Card 1 -->
       <div class="skin-card-v2">
         <div class="badge">Trending Up</div>
-        <img src="https://cdn.skinport.com/images/items/730x380/Sticker%20%7C%20Crown%20(Foil).png" alt="Crown Foil Sticker" />
-        <h4 class="skin-name">Crown (Foil)</h4>
-        <p class="skin-type">Sticker · Limited</p>
+        <img src="https://cdn.skinport.com/images/screenshots/454889828/playside.png" alt="AWP Asiimov" />
+        <h4 class="skin-name">Asiimov</h4>
+        <p class="skin-type">AWP · Field-Tested</p>
         <div class="price-section">
-          <div class="main-price">82,40 €</div>
-          <div class="performance">
-            <span class="change-positive">+4.21%</span>
-            <img class="sparkline" src="https://upload.wikimedia.org/wikipedia/commons/2/2b/Sparkline-up.svg" alt="Trend Up">
-          </div>
+          <div class="main-price">198,00 €</div>
+          <div class="performance"><span class="change-positive">+2.14%</span></div>
+          <canvas id="sparkline1" class="sparkline" width="100" height="30"></canvas>
         </div>
-        <div class="button-row">
+        <div style="display: flex; gap: 16px; margin-top: 16px;">
           <button class="long-btn">Long</button>
           <button class="short-btn">Short</button>
         </div>
       </div>
 
-      <!-- Card 2 -->
+      <!-- Trading Card 2 -->
       <div class="skin-card-v2">
         <div class="badge">Trending Down</div>
-        <img src="https://cdn.skinport.com/images/items/730x380/USP-S%20%7C%20Kill%20Confirmed%20(Field-Tested).png" alt="USP-S Kill Confirmed" />
+        <img src="https://cdn.skinport.com/images/screenshots/451110733/playside.png" alt="USP-S Kill Confirmed" />
         <h4 class="skin-name">Kill Confirmed</h4>
-        <p class="skin-type">USP-S · Field-Tested</p>
+        <p class="skin-type">USP-S · Factory New</p>
         <div class="price-section">
-          <div class="main-price">58,20 €</div>
-          <div class="performance">
-            <span class="change-negative">−2.88%</span>
-            <img class="sparkline" src="https://upload.wikimedia.org/wikipedia/commons/3/36/Sparkline-down.svg" alt="Trend Down">
-          </div>
+          <div class="main-price">58,90 €</div>
+          <div class="performance"><span class="change-negative">-1.72%</span></div>
+          <canvas id="sparkline2" class="sparkline" width="100" height="30"></canvas>
         </div>
-        <div class="button-row">
-          <button class="long-btn">Long</button>
-          <button class="short-btn">Short</button>
-        </div>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="skin-card-v2">
-        <div class="badge">Trending Up</div>
-        <img src="https://cdn.skinport.com/images/items/730x380/AK-47%20%7C%20Redline%20(Minimal%20Wear).png" alt="AK-47 Redline" />
-        <h4 class="skin-name">Redline</h4>
-        <p class="skin-type">AK-47 · Minimal Wear</p>
-        <div class="price-section">
-          <div class="main-price">84,99 €</div>
-          <div class="performance">
-            <span class="change-positive">+1.12%</span>
-            <img class="sparkline" src="https://upload.wikimedia.org/wikipedia/commons/2/2b/Sparkline-up.svg" alt="Trend Up">
-          </div>
-        </div>
-        <div class="button-row">
-          <button class="long-btn">Long</button>
-          <button class="short-btn">Short</button>
-        </div>
-      </div>
-
-      <!-- Card 4 -->
-      <div class="skin-card-v2">
-        <div class="badge">Trending Down</div>
-        <img src="https://cdn.skinport.com/images/items/730x380/M4A4%20%7C%20Howl%20(Minimal%20Wear).png" alt="M4A4 Howl" />
-        <h4 class="skin-name">Howl</h4>
-        <p class="skin-type">M4A4 · Minimal Wear</p>
-        <div class="price-section">
-          <div class="main-price">1.839,00 €</div>
-          <div class="performance">
-            <span class="change-negative">−5.67%</span>
-            <img class="sparkline" src="https://upload.wikimedia.org/wikipedia/commons/3/36/Sparkline-down.svg" alt="Trend Down">
-          </div>
-        </div>
-        <div class="button-row">
-          <button class="long-btn">Long</button>
-          <button class="short-btn">Short</button>
-        </div>
-      </div>
-
-      <!-- Card 5 -->
-      <div class="skin-card-v2">
-        <div class="badge">Trending Up</div>
-        <img src="https://cdn.skinport.com/images/items/730x380/Desert%20Eagle%20%7C%20Printstream%20(Factory%20New).png" alt="Deagle Printstream" />
-        <h4 class="skin-name">Printstream</h4>
-        <p class="skin-type">Desert Eagle · Factory New</p>
-        <div class="price-section">
-          <div class="main-price">93,50 €</div>
-          <div class="performance">
-            <span class="change-positive">+3.09%</span>
-            <img class="sparkline" src="https://upload.wikimedia.org/wikipedia/commons/2/2b/Sparkline-up.svg" alt="Trend Up">
-          </div>
-        </div>
-        <div class="button-row">
+        <div style="display: flex; gap: 16px; margin-top: 16px;">
           <button class="long-btn">Long</button>
           <button class="short-btn">Short</button>
         </div>
@@ -150,7 +104,34 @@
   </main>
 
   <footer class="site-footer">
-    <!-- Reuse your existing footer from index.html -->
+    <!-- Reuse existing footer -->
   </footer>
+
+  <script>
+    const renderSparkline = (id, data, color) => {
+      new Chart(document.getElementById(id), {
+        type: 'line',
+        data: {
+          labels: Array(data.length).fill(''),
+          datasets: [{
+            data,
+            borderColor: color,
+            tension: 0.4,
+            borderWidth: 2,
+            pointRadius: 0,
+            fill: false
+          }]
+        },
+        options: {
+          responsive: false,
+          plugins: { legend: { display: false }, tooltip: { enabled: false } },
+          scales: { x: { display: false }, y: { display: false } }
+        }
+      });
+    };
+
+    renderSparkline("sparkline1", [120, 125, 123, 127, 129, 135], "#4ade80");
+    renderSparkline("sparkline2", [105, 102, 101, 98, 97, 95], "#f87171");
+  </script>
 </body>
 </html>
