@@ -1172,3 +1172,9 @@ body {
 .skin-grid {
   align-self: flex-start; /* prevents it from stretching to match sidebar height */
 }
+/* Force hover movement on trade page cards */
+.skin-card-v2:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
