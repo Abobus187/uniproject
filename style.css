@@ -807,3 +807,47 @@ body {
   background-color: #dc2626;
   color: white;
 }
+/* === Trade Card Adjustments === */
+
+/* 1. Smaller card size */
+.trade-card {
+  max-width: 280px;
+  padding: 16px;
+  border-radius: 12px;
+  background-color: #2c2c2c;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 14px;
+}
+
+/* 2. Remove hover gradient on Long/Short buttons */
+.trade-btn {
+  transition: none !important;
+  box-shadow: none !important;
+}
+
+.trade-btn:hover {
+  background-color: inherit;
+}
+
+/* Optional override if global hover was forcing blue */
+.trade-btn.long:hover {
+  background-color: #22c55e !important;
+}
+
+.trade-btn.short:hover {
+  background-color: #ef4444 !important;
+}
+
+/* 3. Remove the old price (e.g., "Yesterday") */
+.trade-price-old {
+  display: none;
+}
+
+/* 4. Remove wear bar */
+.trade-float-bar {
+  display: none;
+}
+
