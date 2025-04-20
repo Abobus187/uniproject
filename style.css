@@ -1086,4 +1086,87 @@ body {
   height: 32px;
   object-fit: contain;
 }
+/* === COMPACT TRADE CARD FIXES === */
+
+/* Card container cleanup */
+.skin-card-v2 {
+  padding: 16px;
+  gap: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* prevent vertical stretching */
+  height: auto;
+}
+
+/* Image box spacing */
+.img-wrapper {
+  height: 100px; /* reduced height */
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.img-wrapper img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+/* Price + % change section */
+.price-section {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Graph container */
+.sparkline-container {
+  margin: 4px 0 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.sparkline-img {
+  height: 28px;
+  object-fit: contain;
+  max-width: 80%;
+}
+
+/* Buttons row */
+.button-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+  padding: 0;
+}
+
+.long-btn,
+.short-btn {
+  flex: 1;
+  padding: 8px 0;
+  font-size: 14px;
+  border-radius: 6px;
+  font-weight: bold;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.long-btn {
+  background-color: #22c55e;
+}
+
+.short-btn {
+  background-color: #ef4444;
+}
+
+.long-btn:hover,
+.short-btn:hover {
+  transform: translateY(-1px);
+}
 
