@@ -1169,4 +1169,11 @@ body {
 .short-btn:hover {
   transform: translateY(-1px);
 }
+.skin-grid {
+  align-self: flex-start; /* prevents it from stretching to match sidebar height */
+}
+.skin-card-v2 {
+  height: auto;
+  flex-grow: 0;
+}
 
