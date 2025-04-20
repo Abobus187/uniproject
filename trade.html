@@ -240,6 +240,69 @@
       <button class="short-btn">Short @ 58,60 €</button>
     </div>
   </div>
+  <!-- M4A4 Howl -->
+<div class="skin-card-v2">
+  <div class="badge">Trending Up</div>
+  <div class="img-wrapper">
+    <img src="https://cdn.skinport.com/cdn-cgi/image/width=256,height=128,fit=pad,format=avif,quality=85,background=transparent/images/screenshots/440152142/playside.png" alt="M4A4 Howl">
+  </div>
+  <h4 class="skin-name">Howl</h4>
+  <p class="skin-type">M4A4 · Factory New</p>
+  <div class="performance"><span class="change-positive">+4.28%</span></div>
+  <div class="sparkline-container"><canvas id="sparkline3"></canvas></div>
+  <div class="button-row">
+    <button class="long-btn">Long @ 1450,00 €</button>
+    <button class="short-btn">Short @ 1435,00 €</button>
+  </div>
+</div>
+
+<!-- AK-47 Fire Serpent -->
+<div class="skin-card-v2">
+  <div class="badge">Trending Down</div>
+  <div class="img-wrapper">
+    <img src="https://cdn.skinport.com/cdn-cgi/image/width=256,height=128,fit=pad,format=avif,quality=85,background=transparent/images/screenshots/440366903/playside.png" alt="AK-47 Fire Serpent">
+  </div>
+  <h4 class="skin-name">Fire Serpent</h4>
+  <p class="skin-type">AK-47 · Minimal Wear</p>
+  <div class="performance"><span class="change-negative">-2.33%</span></div>
+  <div class="sparkline-container"><canvas id="sparkline4"></canvas></div>
+  <div class="button-row">
+    <button class="long-btn">Long @ 610,00 €</button>
+    <button class="short-btn">Short @ 603,50 €</button>
+  </div>
+</div>
+
+<!-- Desert Eagle Blaze -->
+<div class="skin-card-v2">
+  <div class="badge">Trending Up</div>
+  <div class="img-wrapper">
+    <img src="https://cdn.skinport.com/cdn-cgi/image/width=256,height=128,fit=pad,format=avif,quality=85,background=transparent/images/screenshots/441004973/playside.png" alt="Deagle Blaze">
+  </div>
+  <h4 class="skin-name">Blaze</h4>
+  <p class="skin-type">Desert Eagle · Factory New</p>
+  <div class="performance"><span class="change-positive">+1.92%</span></div>
+  <div class="sparkline-container"><canvas id="sparkline5"></canvas></div>
+  <div class="button-row">
+    <button class="long-btn">Long @ 415,00 €</button>
+    <button class="short-btn">Short @ 410,50 €</button>
+  </div>
+</div>
+
+<!-- Karambit Doppler -->
+<div class="skin-card-v2">
+  <div class="badge">Trending Down</div>
+  <div class="img-wrapper">
+    <img src="https://cdn.skinport.com/cdn-cgi/image/width=256,height=128,fit=pad,format=avif,quality=85,background=transparent/images/screenshots/440162689/playside.png" alt="Karambit Doppler">
+  </div>
+  <h4 class="skin-name">Doppler</h4>
+  <p class="skin-type">Karambit · Minimal Wear</p>
+  <div class="performance"><span class="change-negative">-3.45%</span></div>
+  <div class="sparkline-container"><canvas id="sparkline6"></canvas></div>
+  <div class="button-row">
+    <button class="long-btn">Long @ 920,00 €</button>
+    <button class="short-btn">Short @ 910,00 €</button>
+  </div>
+</div>
 </section>
   </main>
 
@@ -276,6 +339,65 @@
 
     new Chart(document.getElementById("sparkline1"), { type: "line", data: sparkData1, options });
     new Chart(document.getElementById("sparkline2"), { type: "line", data: sparkData2, options });
+    new Chart(document.getElementById("sparkline3"), {
+  type: "line",
+  data: {
+    labels: Array(10).fill(""),
+    datasets: [{
+      data: [1350, 1370, 1400, 1415, 1440, 1460, 1455, 1465, 1470, 1480],
+      borderColor: "#4ade80",
+      borderWidth: 2,
+      fill: false,
+      tension: 0.3
+    }]
+  },
+  options
+});
+
+new Chart(document.getElementById("sparkline4"), {
+  type: "line",
+  data: {
+    labels: Array(10).fill(""),
+    datasets: [{
+      data: [620, 615, 610, 605, 600, 598, 595, 594, 593, 592],
+      borderColor: "#f87171",
+      borderWidth: 2,
+      fill: false,
+      tension: 0.3
+    }]
+  },
+  options
+});
+
+new Chart(document.getElementById("sparkline5"), {
+  type: "line",
+  data: {
+    labels: Array(10).fill(""),
+    datasets: [{
+      data: [390, 395, 398, 400, 405, 410, 412, 414, 416, 417],
+      borderColor: "#4ade80",
+      borderWidth: 2,
+      fill: false,
+      tension: 0.3
+    }]
+  },
+  options
+});
+
+new Chart(document.getElementById("sparkline6"), {
+  type: "line",
+  data: {
+    labels: Array(10).fill(""),
+    datasets: [{
+      data: [950, 945, 940, 935, 928, 920, 915, 912, 910, 905],
+      borderColor: "#f87171",
+      borderWidth: 2,
+      fill: false,
+      tension: 0.3
+    }]
+  },
+  options
+});
   </script>
 </body>
 </html>
