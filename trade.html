@@ -2,47 +2,113 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Trade | SkinsVault</title>
   <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
-    .skin-card-v2 {
-      background-color: #2c2c2c;
-      border-radius: 12px;
-      padding: 20px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    body {
+      background-color: #1e1e1e;
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+      margin: 0;
+    }
+
+    .navbar {
+      background-color: #111;
+      padding: 20px 40px;
       display: flex;
-      flex-direction: column;
-      gap: 12px;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      font-size: 14px;
-      position: relative;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-left, .nav-right {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .nav-link {
+      color: #ccc;
+      text-decoration: none;
+    }
+
+    .nav-link.active {
+      color: #00BFFF;
+      text-shadow: 0 0 6px rgba(0, 191, 255, 0.5);
+    }
+
+    .wallet-btn {
+      padding: 10px 20px;
+      background-color: #00BFFF;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-weight: bold;
       cursor: pointer;
     }
 
-    .img-wrapper img {
-      max-width: 100%;
-      max-height: 128px;
-      object-fit: contain;
-      border-radius: 6px;
+    .main {
+      display: flex;
+      padding: 40px;
+      gap: 40px;
+    }
+
+    .sidebar {
+      width: 250px;
+    }
+
+    .skin-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 24px;
+      flex: 1;
+    }
+
+    .skin-card-v2 {
+      background-color: #2c2c2c;
+      border-radius: 12px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+      transition: transform 0.2s ease;
     }
 
     .badge {
-      position: absolute;
-      top: 12px;
-      left: 12px;
       background-color: #111;
       color: #4ade80;
       font-size: 12px;
       padding: 4px 8px;
       border-radius: 4px;
-      font-weight: bold;
       border: 1px solid #4ade80;
+      width: fit-content;
     }
 
-    .main-price {
-      font-size: 18px;
+    .img-wrapper img {
+      max-width: 100%;
+      object-fit: contain;
+      border-radius: 6px;
+    }
+
+    .skin-name {
+      font-size: 16px;
       font-weight: bold;
+      margin: 0;
+    }
+
+    .skin-type {
+      font-size: 14px;
+      color: #aaa;
+      margin: 0;
+    }
+
+    .price-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 15px;
     }
 
     .change-positive {
@@ -55,20 +121,30 @@
       font-weight: bold;
     }
 
+    .sparkline-container {
+      height: 40px;
+    }
+
+    .sparkline-container canvas {
+      width: 100% !important;
+      height: 40px !important;
+    }
+
     .button-row {
       display: flex;
       gap: 10px;
       margin-top: 8px;
     }
 
-    .long-btn, .short-btn {
+    .long-btn,
+    .short-btn {
       flex: 1;
-      padding: 10px;
+      padding: 8px 0;
+      font-size: 14px;
       border: none;
       border-radius: 6px;
-      font-weight: bold;
-      color: #fff;
       cursor: pointer;
+      color: white;
     }
 
     .long-btn {
@@ -79,48 +155,10 @@
       background-color: #ef4444;
     }
 
-    .sparkline-container {
-      height: 40px;
+    .long-btn:hover,
+    .short-btn:hover {
+      opacity: 0.95;
     }
-
-    canvas {
-      width: 100%;
-      height: 40px;
-    }
-    .skin-card-v2 {
-  padding: 16px;
-  gap: 10px;
-}
-
-.img-wrapper {
-  max-height: 128px;
-  overflow: hidden;
-}
-
-.button-row {
-  display: flex;
-  gap: 10px;
-  margin-top: 8px;
-  margin-bottom: 0; /* remove extra bottom space */
-}
-
-.long-btn,
-.short-btn {
-  flex: 1;
-  padding: 8px 0;
-  font-size: 14px;
-  margin: 0; /* no spacing below */
-}
-
-.sparkline-container {
-  height: 40px;
-  margin-bottom: 0;
-}
-
-.skin-card-v2:last-child {
-  margin-bottom: 0;
-}
-
   </style>
 </head>
 <body>
@@ -139,41 +177,12 @@
   </header>
 
   <main class="main">
-    <aside class="sidebar">
-      <div class="search-bar">
-        <input type="text" placeholder="Search skins to trade..." />
-      </div>
-
-      <h3 class="filter-title">Trend</h3>
-      <div class="filter-group checkboxes">
-        <label><input type="checkbox" checked> Trending Up</label>
-        <label><input type="checkbox"> Trending Down</label>
-        <label><input type="checkbox"> Stable</label>
-      </div>
-
-      <h3 class="filter-title">Item Type</h3>
-      <div class="filter-group checkboxes">
-        <label><input type="checkbox" checked> Skins</label>
-        <label><input type="checkbox"> Cases</label>
-        <label><input type="checkbox"> Stickers</label>
-      </div>
-
-      <h3 class="filter-title">Condition</h3>
-      <div class="filter-group checkboxes">
-        <label><input type="checkbox" checked> Factory New</label>
-        <label><input type="checkbox"> Minimal Wear</label>
-        <label><input type="checkbox"> Field-Tested</label>
-        <label><input type="checkbox"> Well-Worn</label>
-        <label><input type="checkbox"> Battle-Scarred</label>
-      </div>
-    </aside>
-
     <section class="skin-grid">
-      <!-- Skin Card 1 -->
+      <!-- Card 1 -->
       <div class="skin-card-v2">
         <div class="badge">Trending Up</div>
         <div class="img-wrapper">
-          <img src="https://cdn.skinport.com/cdn-cgi/image/width=256,height=128,fit=pad,format=avif,quality=85,background=transparent/images/screenshots/443244433/playside.png" alt="AWP Asiimov">
+          <img src="https://cdn.skinport.com/cdn-cgi/image/width=256,height=128,fit=pad,format=avif,quality=85,background=transparent/images/screenshots/443244433/playside.png" alt="Asiimov">
         </div>
         <h4 class="skin-name">Asiimov</h4>
         <p class="skin-type">AWP · Field-Tested</p>
@@ -181,20 +190,18 @@
           <div class="main-price">198,00 €</div>
           <div class="performance"><span class="change-positive">+2.14%</span></div>
         </div>
-        <div class="sparkline-container">
-          <canvas id="sparkline1"></canvas>
-        </div>
+        <div class="sparkline-container"><canvas id="sparkline1"></canvas></div>
         <div class="button-row">
           <button class="long-btn">Long</button>
           <button class="short-btn">Short</button>
         </div>
       </div>
 
-      <!-- Skin Card 2 -->
+      <!-- Card 2 -->
       <div class="skin-card-v2">
         <div class="badge">Trending Down</div>
         <div class="img-wrapper">
-          <img src="https://cdn.skinport.com/cdn-cgi/image/width=256,height=128,fit=pad,format=avif,quality=85,background=transparent/images/screenshots/451110733/playside.png" alt="USP-S Kill Confirmed">
+          <img src="https://cdn.skinport.com/cdn-cgi/image/width=256,height=128,fit=pad,format=avif,quality=85,background=transparent/images/screenshots/451110733/playside.png" alt="Kill Confirmed">
         </div>
         <h4 class="skin-name">Kill Confirmed</h4>
         <p class="skin-type">USP-S · Factory New</p>
@@ -202,9 +209,7 @@
           <div class="main-price">58,90 €</div>
           <div class="performance"><span class="change-negative">-1.72%</span></div>
         </div>
-        <div class="sparkline-container">
-          <canvas id="sparkline2"></canvas>
-        </div>
+        <div class="sparkline-container"><canvas id="sparkline2"></canvas></div>
         <div class="button-row">
           <button class="long-btn">Long</button>
           <button class="short-btn">Short</button>
@@ -213,60 +218,44 @@
     </section>
   </main>
 
-  <footer class="site-footer">
-    <!-- Reuse your existing footer -->
-  </footer>
-
-  <!-- Chart.js CDN -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script>
-    const ctx1 = document.getElementById('sparkline1').getContext('2d');
-    new Chart(ctx1, {
-      type: 'line',
-      data: {
-        labels: Array(7).fill(''),
-        datasets: [{
-          data: [180, 182, 183, 185, 190, 195, 198],
-          borderColor: '#4ade80',
-          borderWidth: 2,
-          pointRadius: 0,
-          fill: false,
-          tension: 0.4
-        }]
-      },
-      options: {
-        responsive: true,
-        plugins: { legend: { display: false }, tooltip: { enabled: false } },
-        scales: {
-          x: { display: false },
-          y: { display: false }
-        }
-      }
-    });
+    const sparkData1 = {
+      labels: Array(10).fill(''),
+      datasets: [{
+        data: [92, 96, 94, 97, 101, 105, 107, 112, 116, 118],
+        borderColor: "#4ade80",
+        borderWidth: 2,
+        fill: false,
+        tension: 0.3
+      }]
+    };
 
-    const ctx2 = document.getElementById('sparkline2').getContext('2d');
-    new Chart(ctx2, {
-      type: 'line',
-      data: {
-        labels: Array(7).fill(''),
-        datasets: [{
-          data: [62, 61, 60, 59, 58.5, 58.8, 58.9],
-          borderColor: '#f87171',
-          borderWidth: 2,
-          pointRadius: 0,
-          fill: false,
-          tension: 0.4
-        }]
+    const sparkData2 = {
+      labels: Array(10).fill(''),
+      datasets: [{
+        data: [58, 57, 56, 54, 53, 51, 50, 49, 48, 47],
+        borderColor: "#f87171",
+        borderWidth: 2,
+        fill: false,
+        tension: 0.3
+      }]
+    };
+
+    const options = {
+      plugins: { legend: { display: false } },
+      scales: {
+        x: { display: false },
+        y: { display: false }
       },
-      options: {
-        responsive: true,
-        plugins: { legend: { display: false }, tooltip: { enabled: false } },
-        scales: {
-          x: { display: false },
-          y: { display: false }
-        }
-      }
-    });
+      elements: {
+        point: { radius: 0 }
+      },
+      responsive: true,
+      maintainAspectRatio: false
+    };
+
+    new Chart(document.getElementById("sparkline1"), { type: "line", data: sparkData1, options });
+    new Chart(document.getElementById("sparkline2"), { type: "line", data: sparkData2, options });
   </script>
 </body>
 </html>
