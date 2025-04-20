@@ -177,8 +177,36 @@
   </header>
 
   <main class="main">
+    <aside class="sidebar">
+      <div class="search-bar">
+        <input type="text" placeholder="Search skins to trade..." />
+      </div>
+
+      <h3 class="filter-title">Trend</h3>
+      <div class="filter-group checkboxes">
+        <label><input type="checkbox" checked> Trending Up</label>
+        <label><input type="checkbox"> Trending Down</label>
+        <label><input type="checkbox"> Stable</label>
+      </div>
+
+      <h3 class="filter-title">Item Type</h3>
+      <div class="filter-group checkboxes">
+        <label><input type="checkbox" checked> Skins</label>
+        <label><input type="checkbox"> Cases</label>
+        <label><input type="checkbox"> Stickers</label>
+      </div>
+
+      <h3 class="filter-title">Condition</h3>
+      <div class="filter-group checkboxes">
+        <label><input type="checkbox" checked> Factory New</label>
+        <label><input type="checkbox"> Minimal Wear</label>
+        <label><input type="checkbox"> Field-Tested</label>
+        <label><input type="checkbox"> Well-Worn</label>
+        <label><input type="checkbox"> Battle-Scarred</label>
+      </div>
+    </aside>
+
     <section class="skin-grid">
-      <!-- Card 1 -->
       <div class="skin-card-v2">
         <div class="badge">Trending Up</div>
         <div class="img-wrapper">
@@ -197,7 +225,6 @@
         </div>
       </div>
 
-      <!-- Card 2 -->
       <div class="skin-card-v2">
         <div class="badge">Trending Down</div>
         <div class="img-wrapper">
@@ -243,13 +270,8 @@
 
     const options = {
       plugins: { legend: { display: false } },
-      scales: {
-        x: { display: false },
-        y: { display: false }
-      },
-      elements: {
-        point: { radius: 0 }
-      },
+      scales: { x: { display: false }, y: { display: false } },
+      elements: { point: { radius: 0 } },
       responsive: true,
       maintainAspectRatio: false
     };
